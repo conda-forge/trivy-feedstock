@@ -1,5 +1,5 @@
 {% set name = "trivy" %}
-{% set version = "0.55.1" %}
+{% set version = "0.57.1" %}
 
 package:
   name: {{ name|lower }}
@@ -7,7 +7,7 @@ package:
 
 source:
   - url: https://github.com/aquasecurity/{{ name }}/archive/v{{ version }}.tar.gz
-    sha256: dfe18dbe98ce4edecbe15a830840e914f8234d99ac8074f7992c315a1ce98392
+    sha256: e9ff5b7a190e132180955a47e45007038816d9dca7e8ded96008d90fa79323e2
 
   # csaf_distribution licenses
   - url: https://raw.githubusercontent.com/csaf-poc/csaf_distribution/refs/heads/main/LICENSES/Apache-2.0.txt
@@ -43,7 +43,7 @@ test:
 about:
   home: https://github.com/aquasecurity/trivy
   license: Apache-2.0
-  license_file: 
+  license_file:
     - LICENSE
     - licenses/
   summary: Trivy is a comprehensive and versatile security scanner. Trivy has scanners that look for security issues, and targets where it can find those issues.
