@@ -10,16 +10,19 @@ source:
     sha256: c0637d98cb48a6de2ef474288e3c1ad4eabd2f8e55a3b4910ea830819eb1f98e
 
   # csaf_distribution licenses
-  - url: https://raw.githubusercontent.com/csaf-poc/csaf_distribution/refs/heads/main/LICENSES/Apache-2.0.txt
+  - url: https://raw.githubusercontent.com/gocsaf/csaf/refs/heads/main/LICENSES/Apache-2.0.txt
     sha256: 074e6e32c86a4c0ef8b3ed25b721ca23aca83df277cd88106ef7177c354615ff
-  - url: https://raw.githubusercontent.com/csaf-poc/csaf_distribution/refs/heads/main/LICENSES/BSD-3-Clause.txt
+  - url: https://raw.githubusercontent.com/gocsaf/csaf/refs/heads/main/LICENSES/BSD-3-Clause.txt
     sha256: 5a93d5831e1297ab10fe643e1a631e83be392896da14ee2951285a79012df69d
-  - url: https://raw.githubusercontent.com/csaf-poc/csaf_distribution/refs/heads/main/LICENSES/MIT.txt
+  - url: https://raw.githubusercontent.com/gocsaf/csaf/refs/heads/main/LICENSES/MIT.txt
     sha256: d9f773a3d8d9e023744b73a755efe6c83c7ddc36e181198c7711cbdd6a7633c2
 
   # mathutil license
   - url: https://gitlab.com/cznic/mathutil/-/raw/master/LICENSE
     sha256: bfa9bf72a72ca009fd62a8f84fca3dca67e51d93af96352723646599898b6cf5
+
+  - url: https://raw.githubusercontent.com/xi2/xz/refs/heads/master/LICENSE
+    sha256: 5c640056d513f276d56635af7a0bed81cb7eac02a31b6e56d40c416557a8d8ce
 
 build:
   number: 0
