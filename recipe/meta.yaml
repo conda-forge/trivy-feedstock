@@ -36,7 +36,7 @@ build:
 
 requirements:
   build:
-    - {{ compiler('go-nocgo') }} 1.22
+    - {{ compiler('go-nocgo') }} 1.22.6
     - go-licenses
 
 test:
