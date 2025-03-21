@@ -22,7 +22,7 @@ source:
     sha256: bfa9bf72a72ca009fd62a8f84fca3dca67e51d93af96352723646599898b6cf5
 
   - url: https://raw.githubusercontent.com/xi2/xz/refs/heads/master/LICENSE
-    sha256: 5c640056d513f276d56635af7a0bed81cb7eac02a31b6e56d40c416557a8d8ce
+    sha256: bfa9bf72a72ca009fd62a8f84fca3dca67e51d93af96352723646599898b6cf5
 
 build:
   number: 0
