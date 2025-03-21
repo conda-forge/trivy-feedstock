@@ -1,5 +1,5 @@
 {% set name = "trivy" %}
-{% set version = "0.58.0" %}
+{% set version = "0.60.0" %}
 
 package:
   name: {{ name|lower }}
@@ -7,7 +7,7 @@ package:
 
 source:
   - url: https://github.com/aquasecurity/{{ name }}/archive/v{{ version }}.tar.gz
-    sha256: c0637d98cb48a6de2ef474288e3c1ad4eabd2f8e55a3b4910ea830819eb1f98e
+    sha256: aab6a0b923ca144b9756e8ea2c23d9af06f423a94b25f28bd5543e786bf6585f
 
   # csaf_distribution licenses
   - url: https://raw.githubusercontent.com/gocsaf/csaf/refs/heads/main/LICENSES/Apache-2.0.txt
@@ -22,7 +22,7 @@ source:
     sha256: bfa9bf72a72ca009fd62a8f84fca3dca67e51d93af96352723646599898b6cf5
 
   - url: https://raw.githubusercontent.com/xi2/xz/refs/heads/master/LICENSE
-    sha256: bfa9bf72a72ca009fd62a8f84fca3dca67e51d93af96352723646599898b6cf5
+    sha256: 5c640056d513f276d56635af7a0bed81cb7eac02a31b6e56d40c416557a8d8ce
 
 build:
   number: 0
