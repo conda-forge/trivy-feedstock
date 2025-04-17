@@ -25,7 +25,7 @@ source:
     sha256: bfa9bf72a72ca009fd62a8f84fca3dca67e51d93af96352723646599898b6cf5
 
 build:
-  number: 0
+  number: 1
   script:
     - go install ./cmd/trivy
     - go-licenses save ./cmd/trivy --save_path licenses --ignore github.com/aquasecurity/trivy --ignore github.com/csaf-poc/csaf_distribution --ignore modernc.org/mathutil --ignore github.com/gocsaf/csaf/v3/csaf --ignore github.com/gocsaf/csaf/v3/util --ignore github.com/xi2/xz
