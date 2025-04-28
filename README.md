@@ -9,6 +9,8 @@ Package license: Apache-2.0
 
 Summary: Trivy is a comprehensive and versatile security scanner. Trivy has scanners that look for security issues, and targets where it can find those issues.
 
+Development: https://github.com/aquasecurity/trivy
+
 Documentation: https://aquasecurity.github.io/trivy/
 
 Current build status
