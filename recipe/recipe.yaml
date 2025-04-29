@@ -38,8 +38,10 @@ build:
   number: 1
   script:
     - cd src
+    - if: win
+      then: go install -v ./cmd/trivy
+      else: go build -v -trimpath -o $PREFIX/bin/trivy ./cmd/trivy
     - go-licenses save ./cmd/trivy --save_path ../licenses --ignore github.com/aquasecurity/trivy --ignore github.com/csaf-poc/csaf_distribution --ignore modernc.org/mathutil --ignore github.com/gocsaf/csaf/v3/csaf --ignore github.com/gocsaf/csaf/v3/util --ignore github.com/xi2/xz
-    - go install ./cmd/trivy
 
 
 requirements:
