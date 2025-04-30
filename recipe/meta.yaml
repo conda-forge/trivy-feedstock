@@ -1,5 +1,5 @@
 {% set name = "trivy" %}
-{% set version = "0.61.1" %}
+{% set version = "0.62.0" %}
 
 package:
   name: {{ name|lower }}
@@ -7,7 +7,7 @@ package:
 
 source:
   - url: https://github.com/aquasecurity/{{ name }}/archive/v{{ version }}.tar.gz
-    sha256: f6ad43e008c008d67842c9e2b4af80c2e96854db8009fba48fc37b4f9b15f59b
+    sha256: 2b0b4df4bbfebde00a14a0616f5013db4cbba0f021a780a7e3b717a2c2978493
 
   # csaf_distribution licenses
   - url: https://raw.githubusercontent.com/gocsaf/csaf/refs/heads/main/LICENSES/Apache-2.0.txt
@@ -21,7 +21,7 @@ source:
     sha256: 5c640056d513f276d56635af7a0bed81cb7eac02a31b6e56d40c416557a8d8ce
 
 build:
-  number: 1
+  number: 0
   script:
     - go build -v -o $PREFIX/bin/ ./cmd/trivy ./cmd/trivy  # [not win]
     - go build -v -o %LIBRARY_BIN%\trivy.exe .\cmd\trivy  # [win]
