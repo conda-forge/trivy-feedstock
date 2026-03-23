@@ -201,4 +201,5 @@ Feedstock Maintainers
 
 * [@fhoehle](https://github.com/fhoehle/)
 * [@mediocretech](https://github.com/mediocretech/)
+* [@xhochy](https://github.com/xhochy/)
 
