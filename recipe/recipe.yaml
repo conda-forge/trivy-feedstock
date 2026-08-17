@@ -12,10 +12,8 @@ source:
   - url: https://github.com/aquasecurity/${{ name }}/archive/v${{ version }}.tar.gz
     sha256: a2a6f9eee305dd6672ec3af92954c456e5f5439ab3a46d6f4dc06f53422752d0
     target_directory: src
-  # csaf_distribution licenses
-  - url: https://raw.githubusercontent.com/gocsaf/csaf/refs/heads/main/LICENSES/Apache-2.0.txt
-    sha256: 074e6e32c86a4c0ef8b3ed25b721ca23aca83df277cd88106ef7177c354615ff
-    file_name: gocsaf-LICENSE
+  # xi2/xz declares its licensing in prose (public domain), which go-licenses
+  # cannot classify, so it is ignored below and its license vendored here.
   - url: https://raw.githubusercontent.com/xi2/xz/refs/heads/master/LICENSE
     sha256: 5c640056d513f276d56635af7a0bed81cb7eac02a31b6e56d40c416557a8d8ce
     file_name: xi2-xz-LICENSE
@@ -29,13 +27,16 @@ build:
         - export GOEXPERIMENT=jsonv2
         - go build -v -o $PREFIX/bin/trivy -ldflags="-s -w"
         - cp "$(go list -m -f '{{.Dir}}' github.com/in-toto/in-toto-golang)/LICENSE" $SRC_DIR/in-toto-golang-LICENSE
+        - cp "$(go list -m -f '{{.Dir}}' github.com/in-toto/attestation)/LICENSE" $SRC_DIR/in-toto-attestation-LICENSE
       else:
         - echo on
         - set GOEXPERIMENT=jsonv2
         - go build -v -o %LIBRARY_BIN%\trivy.exe -ldflags="-s"
         - for /f %%I in ('go list -m -f "{{.Dir}}" github.com/in-toto/in-toto-golang') do copy "%%I\LICENSE" "%SRC_DIR%\in-toto-golang-LICENSE"
-    - go-licenses save . --save_path ../../../licenses --ignore github.com/aquasecurity/trivy --ignore github.com/csaf-poc/csaf_distribution --ignore modernc.org/mathutil --ignore github.com/gocsaf/csaf/v3/csaf --ignore github.com/gocsaf/csaf/v3/util --ignore github.com/xi2/xz --ignore
-      github.com/in-toto/in-toto-golang --ignore github.com/in-toto/attestation
+        - for /f %%I in ('go list -m -f "{{.Dir}}" github.com/in-toto/attestation') do copy "%%I\LICENSE" "%SRC_DIR%\in-toto-attestation-LICENSE"
+    # The ignored modules below have licenses go-licenses cannot classify; their
+    # license files are copied in by hand above (see about.license_file).
+    - go-licenses save . --save_path ../../../licenses --ignore github.com/aquasecurity/trivy --ignore github.com/xi2/xz --ignore github.com/in-toto/in-toto-golang --ignore github.com/in-toto/attestation
 
 requirements:
   build:
@@ -50,9 +51,9 @@ about:
   license: Apache-2.0
   license_file:
     - src/LICENSE
-    - gocsaf-LICENSE
     - xi2-xz-LICENSE
     - in-toto-golang-LICENSE
+    - in-toto-attestation-LICENSE
     - licenses/
   summary: Trivy is a comprehensive and versatile security scanner. Trivy has scanners that look for security issues, and targets where it can find those issues.
   homepage: https://github.com/aquasecurity/trivy
