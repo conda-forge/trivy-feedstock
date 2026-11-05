@@ -2,7 +2,7 @@ schema_version: 1
 
 context:
   name: trivy
-  version: "0.76.1"
+  version: "0.76.2"
 
 package:
   name: ${{ name|lower }}
@@ -10,7 +10,7 @@ package:
 
 source:
   - url: https://github.com/aquasecurity/${{ name }}/archive/v${{ version }}.tar.gz
-    sha256: 641d78078e6201afce9f18e5daf0ecabaa9dbee7a257b48828e1e3fc43670aca
+    sha256: ea2670e94696508b12687e1f8ac35a6fe529893e351b7e38362c4a385ff2db9a
     target_directory: src
   # xi2/xz declares its licensing in prose (public domain), which go-licenses
   # cannot classify, so it is ignored below and its license vendored here.
